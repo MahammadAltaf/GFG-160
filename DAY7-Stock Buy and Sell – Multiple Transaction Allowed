@@ -1,0 +1,23 @@
+public class StockProfitCalculator {
+
+    public int maximumProfit(int prices[]) {
+        int result = 0;
+        
+        for (int i = 0; i < prices.length - 1; i++) {
+            if (prices[i] <= prices[i + 1]) {
+                result = result + (prices[i + 1] - prices[i]);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        StockProfitCalculator calculator = new StockProfitCalculator();
+
+        // Example test case
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        int maxProfit = calculator.maximumProfit(prices);
+
+        System.out.println("Maximum profit: " + maxProfit);
+    }
+}
